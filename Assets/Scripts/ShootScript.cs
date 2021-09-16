@@ -7,6 +7,10 @@ public class ShootScript : MonoBehaviour
 
     public GameObject arCamera;
     public GameObject smoke;
+    Rigidbody2D rb;
+    void Start(){
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public void Shoot() {
 
@@ -14,7 +18,7 @@ public class ShootScript : MonoBehaviour
 
         if (Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out hit)) {
 
-            if (hit.transform.name == "balloon1(Clone)" || hit.transform.name == "balloon2(Clone)" || hit.transform.name == "balloon2(Clone)" ) {
+            if (hit.transform.name == "Banana(Clone)" || hit.transform.name == "Banana(Clone)" || hit.transform.name == "Banana(Clone)" ) {
 
                 Destroy(hit.transform.gameObject);
 
