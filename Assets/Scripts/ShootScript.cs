@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootScript : MonoBehaviour
 {
 
     public GameObject arCamera;
     public GameObject smoke;
-    // Rigidbody2D rb;
-    // void Start(){
-    //     rb = GetComponent<Rigidbody2D>();
-    // }
+    public Text scoreText;
+    private int fruits = 0;
+
+    
 
     public void Shoot() {
 
@@ -25,6 +26,9 @@ public class ShootScript : MonoBehaviour
                 Destroy(hit.transform.gameObject);
 
                 Instantiate(smoke, hit.point, Quaternion.LookRotation(hit.normal));
+
+                fruits = fruits + 10;
+                scoreText.text = "Score: " + fruits;
             }
            
         }
