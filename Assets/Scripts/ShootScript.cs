@@ -21,7 +21,7 @@ public class ShootScript : MonoBehaviour
         {
              Debug.Log("Hit point" + hit.transform.name);
 
-             if (hit.transform.name == "Banana(Clone)") {
+             if (hit.transform.name == "Banana(Clone)" ||hit.transform.name == "Olive(Clone)" ||hit.transform.name == "Watermelon(Clone)" ) {
 
                 Destroy(hit.transform.gameObject);
 
